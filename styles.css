@@ -1,0 +1,13 @@
+.blinkiesss {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border: 2px solid block;
+
+
+}
+
+.blinkiesss img {
+    height: 50px;
+    width: auto;
+}

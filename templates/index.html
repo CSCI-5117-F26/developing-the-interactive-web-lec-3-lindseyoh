@@ -2,11 +2,16 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>PHM fan club!</title>
+        <title>{% block title %}hihihi{% endblock %}</title>
         <meta name="viewport" content="width=device-width" />
         <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+        {% block head %}
+        {% endblock %}
     </head>
     <body>
+        <nav>
+            oi
+        </nav>
 
         <div class="hero-container">
             <h1>Project Hail Mary Fanclub!!</h1>
@@ -21,12 +26,15 @@
             </div>
             <p><b><u>Synopsis</u></b><br>Sebastian Wilder from La La Land falls asleep first at the space hippie sleepover (rookie mistake) and wakes up to find his commute to Glover Cleveland Middle got too far for a bike. Teaming up with a rock in a hamster ball, the two must use the power of friendship, interpretive dance, and Microsoft Excel to embark on a life-changing fishing trip.</p>
             <h2>CREW</h2>
+            {% if names %}
             <ul>
                 {% for name in names %}
                 <li>{{name}}</li>
                 {% endfor %}
-                
             </ul>
+            {% else %}
+            <p>no names yet.</p>
+            {% endif %}
             <form action ="/catch" id="YEFORM" method="post">
                 <input type="text" name="name" placeholder="Enter name here">
                 <button type="submit">Submit</button>

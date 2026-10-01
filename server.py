@@ -1,8 +1,9 @@
 from flask import Flask, render_template, request, redirect
+import os
 
 app = Flask(__name__)
 
-names = []
+names = [os.environ["FIRST_NAME_IN_LIST"]]
 
 @app.route("/")
 def index():
